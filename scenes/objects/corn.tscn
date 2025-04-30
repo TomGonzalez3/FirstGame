@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpyxdkwue0650"]
+
+[ext_resource type="Texture2D" uid="uid://bn0cr2lfqsxc7" path="res://assets/Objects/Basic_Plants.png" id="1_ukn38"]
+[ext_resource type="PackedScene" uid="uid://cld5xj1htxxxx" path="res://scenes/components/collectable_component.tscn" id="2_vto7g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g736c"]
+radius = 6.08276
+
+[node name="Corn" type="Sprite2D"]
+position = Vector2(-1, -1)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("1_ukn38")
+hframes = 6
+vframes = 2
+frame = 5
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_vto7g")]
+y_sort_enabled = true
+collectable_name = "Corn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_g736c")
